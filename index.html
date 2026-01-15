@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>pavan.oi — Design Battles</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #111827, #020617);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-white font-sans">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+    <h1 class="text-xl font-bold tracking-wide">pavan<span class="text-indigo-400">.oi</span></h1>
+    <nav class="space-x-6 text-sm text-white/70">
+      <a href="#" class="hover:text-white">Compare</a>
+      <a href="#" class="hover:text-white">Leaderboard</a>
+      <a href="#" class="hover:text-white">About</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- Title -->
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-semibold mb-2">Which design is better?</h2>
+      <p class="text-white/60">Vote to rank AI-generated designs</p>
+    </div>
+
+    <!-- Comparison Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Card A -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:border-indigo-400 transition">
+        <div class="aspect-video bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center text-lg font-medium">
+          Design A
+        </div>
+        <button onclick="vote('A')" class="w-full py-3 rounded-xl bg-indigo-500 hover:bg-indigo-600 transition font-semibold">
+          A is better
+        </button>
+      </div>
+
+      <!-- Card B -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover:border-indigo-400 transition">
+        <div class="aspect-video bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl mb-4 flex items-center justify-center text-lg font-medium">
+          Design B
+        </div>
+        <button onclick="vote('B')" class="w-full py-3 rounded-xl bg-indigo-500 hover:bg-indigo-600 transition font-semibold">
+          B is better
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Skip -->
+    <div class="text-center mt-8">
+      <button onclick="vote('Skip')" class="text-white/60 hover:text-white underline">
+        Skip this comparison
+      </button>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="text-center mt-6 text-indigo-400 font-medium"></div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-white/40 text-sm">
+    © 2026 pavan.oi — Built for experimentation
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function vote(choice) {
+      document.getElementById("result").innerText =
+        choice === "Skip"
+          ? "Skipped 👍"
+          : `You voted for Design ${choice} ✅`;
+    }
+  </script>
+
+</body>
+</html>
